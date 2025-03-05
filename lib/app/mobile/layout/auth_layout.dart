@@ -4,7 +4,6 @@ import '../pages/main/onboarding/welcome_page.dart';
 import 'app_navigation_layout.dart';
 
 class AuthLayout extends StatelessWidget {
-  ///Return either: InitAppData or WelcomePage
   const AuthLayout({
     super.key,
     this.pageIfNotConnected,

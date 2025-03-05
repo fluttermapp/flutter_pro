@@ -66,15 +66,21 @@ class _EditHabitNameWidgetState extends State<EditHabitNameWidget> {
       builder: (context, userHabit, child) {
         return AnimatedCrossFade(
           firstChild: FilledButton.tonal(
-            child: Text(
-              userHabit.userHabit!.name,
-              style: AppTextStyles.m,
-            ),
             onPressed: () {
               setState(() {
                 isEditMode = !isEditMode;
               });
             },
+            style: FilledButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius:
+                    BorderRadius.circular(AppDimensions.kBorderRadius10),
+              ),
+            ),
+            child: Text(
+              userHabit.userHabit!.name,
+              style: AppTextStyles.m,
+            ),
           ),
           secondChild: Form(
             key: formKey,
@@ -82,12 +88,12 @@ class _EditHabitNameWidgetState extends State<EditHabitNameWidget> {
               child: Column(
                 children: [
                   TextFormField(
-                    inputFormatters: AppFormatters.lengthLimiting30,
+                    inputFormatters: AppFormatters.lengthLimiting25,
                     controller: controller,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
-                          Radius.circular(AppDimensions.kBorderRadius25),
+                          Radius.circular(AppDimensions.kBorderRadius10),
                         ),
                       ),
                       suffixIcon: IconButton(

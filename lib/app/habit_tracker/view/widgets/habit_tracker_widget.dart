@@ -23,11 +23,13 @@ class HabitTrackerWidget extends StatelessWidget {
         if (data.isCompleted(daysAgoNow)) {
           iconWidget = const Icon(Icons.check);
           iconBackgroundColor = Colors.greenAccent;
-          iconForegroundColor = Colors.black;
+          iconForegroundColor = Colors.green.shade900;
         } else {
           iconWidget = const Icon(Icons.add);
-          iconBackgroundColor = Colors.grey;
-          iconForegroundColor = Colors.black;
+          iconBackgroundColor =
+              Theme.of(context).colorScheme.secondaryContainer;
+          iconForegroundColor =
+              Theme.of(context).colorScheme.onSecondaryContainer;
         }
         int nbWeeks = 52;
         int nbDays = 7;
@@ -124,7 +126,8 @@ class HabitTrackerWidget extends StatelessWidget {
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-            top: Radius.circular(AppDimensions.kBorderRadius25)),
+          top: Radius.circular(AppDimensions.kBorderRadius25),
+        ),
       ),
     );
   }

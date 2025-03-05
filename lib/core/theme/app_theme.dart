@@ -6,6 +6,7 @@ Color _appColor = Colors.greenAccent;
 
 class AppTheme {
   static final ThemeData dark = ThemeData(
+    useMaterial3: true,
     fontFamily: AppTextStyles.fontFamily,
     inputDecorationTheme: const InputDecorationTheme(
       border: OutlineInputBorder(

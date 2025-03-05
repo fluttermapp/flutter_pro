@@ -16,7 +16,7 @@ class HomeRecommendedWidget extends StatelessWidget {
       children: [
         const ListTileWidget(
           title: Text(
-            Words.yourHabits,
+            Words.dailyHabit,
             style: AppTextStyles.xlBold,
           ),
           widgets: [

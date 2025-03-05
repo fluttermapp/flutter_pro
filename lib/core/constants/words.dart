@@ -11,6 +11,7 @@ class Words {
   static const String changePassword = 'Change password';
   static const String continueNext = 'Continue';
   static const String currentPassword = 'Current password';
+  static const String dailyHabit = 'Daily habit';
   static const String deleteMyAccount = 'Delete my account';
   static const String deletePermanently = 'Delete Permanently';
   static const String email = 'Email';
@@ -56,5 +57,4 @@ class Words {
   static const String usernameChangeFailed = 'Username change failed';
   static const String viewLicenses = 'View licenses';
   static const String welcomeTo = 'Welcome to ';
-  static const String yourHabits = 'Your habits';
 }
