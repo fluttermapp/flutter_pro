@@ -63,7 +63,7 @@ class _EditHabitNameWidgetState extends State<EditHabitNameWidget> {
     }
 
     return Consumer<UserHabitProvider>(
-      builder: (context, userHabit, child) {
+      builder: (context, userHabitProvider, child) {
         return AnimatedCrossFade(
           firstChild: FilledButton.tonal(
             onPressed: () {
@@ -78,7 +78,7 @@ class _EditHabitNameWidgetState extends State<EditHabitNameWidget> {
               ),
             ),
             child: Text(
-              userHabit.userHabit!.name,
+              userHabitProvider.userHabit!.name,
               style: AppTextStyles.m,
             ),
           ),
