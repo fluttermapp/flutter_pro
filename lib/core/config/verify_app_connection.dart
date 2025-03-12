@@ -3,6 +3,8 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../notifiers/notifiers.dart';
 
+bool isFirstRun = true;
+
 Future<void> verifyAppConnection() async {
   final connectionChecker = InternetConnectionChecker.instance;
   //* Removed cause its slow: isAppConnectedOnline = await connectionChecker.hasConnection;
@@ -17,6 +19,11 @@ Future<void> verifyAppConnection() async {
         AppData.isConnectedNotifier.value = true;
       } else {
         AppData.isConnectedNotifier.value = false;
+        if (isFirstRun) {
+          AppData.isConnectedNotifier.value =
+              connectivityResults.contains(ConnectivityResult.none) == false;
+          isFirstRun = true;
+        }
       }
     },
   );
