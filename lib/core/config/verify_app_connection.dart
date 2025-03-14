@@ -22,7 +22,7 @@ Future<void> verifyAppConnection() async {
         if (isFirstRun) {
           AppData.isConnectedNotifier.value =
               connectivityResults.contains(ConnectivityResult.none) == false;
-          isFirstRun = true;
+          isFirstRun = false;
         }
       }
     },
