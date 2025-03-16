@@ -138,7 +138,7 @@ class CustomDatePickerState extends State<CustomDatePicker> {
     int progress = userHabitProvider.userHabit!.getProgressFromDateTime(date);
     Color color;
     if (progress == 1) {
-      color = Colors.greenAccent;
+      color = Theme.of(context).colorScheme.primary;
     } else {
       color = Colors.white30;
     }

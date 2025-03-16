@@ -16,6 +16,7 @@ class DeleteAccountPage extends StatefulWidget {
 class _DeleteAccountPageState extends State<DeleteAccountPage> {
   final formKey = GlobalKey<FormState>();
   TextEditingController controllerEmail = TextEditingController();
+  TextEditingController controllerPassword = TextEditingController();
   String errorMessage = '';
 
   void deleteAccount() {
@@ -32,6 +33,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
   @override
   void dispose() {
     controllerEmail.dispose();
+    controllerPassword.dispose();
     super.dispose();
   }
 
@@ -74,6 +76,22 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                           }
                           if (controllerEmail.text.contains('@') == false) {
                             return Words.invalidEmailEntered;
+                          }
+                          return null;
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      TextFormField(
+                        controller: controllerPassword,
+                        decoration: const InputDecoration(
+                          labelText: Words.currentPassword,
+                        ),
+                        validator: (String? value) {
+                          if (value == null) {
+                            return Words.enterSomething;
+                          }
+                          if (value.trim().isEmpty) {
+                            return Words.enterSomething;
                           }
                           return null;
                         },

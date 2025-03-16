@@ -22,8 +22,8 @@ class HabitTrackerWidget extends StatelessWidget {
         Color iconForegroundColor;
         if (data.isCompleted(daysAgoNow)) {
           iconWidget = const Icon(Icons.check);
-          iconBackgroundColor = Colors.greenAccent;
-          iconForegroundColor = Colors.green.shade900;
+          iconBackgroundColor = Theme.of(context).colorScheme.primary;
+          iconForegroundColor = Theme.of(context).colorScheme.onPrimary;
         } else {
           iconWidget = const Icon(Icons.add);
           iconBackgroundColor =
@@ -78,7 +78,8 @@ class HabitTrackerWidget extends StatelessWidget {
                                     calculateDaysAgo(rowIndex, columnIndex);
                                 Color boxColor;
                                 if (data.isCompleted(daysAgo)) {
-                                  boxColor = Colors.greenAccent;
+                                  boxColor =
+                                      Theme.of(context).colorScheme.primary;
                                 } else {
                                   boxColor = Colors.grey;
                                 }
