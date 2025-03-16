@@ -47,7 +47,7 @@ class Words {
   static const String resetPassword = 'Reset password';
   static const String signIn = 'Sign in';
   static const String theUltimateFlutterProCourse =
-      'The ultimate Flutter pro course';
+      'The ultimate way to publish like a pro';
   static const String settings = 'Settings';
 
   //uvwxyz
